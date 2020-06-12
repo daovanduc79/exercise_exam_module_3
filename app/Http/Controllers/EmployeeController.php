@@ -78,8 +78,11 @@ class EmployeeController extends Controller
         return back();
     }
 
-    public function search()
+    public function search(Request $request)
     {
-
+        $keyword = $request->keyword;
+        $employees = $this->employees->where('name','like','%'.$keyword.'%')
+            ->orWhere('phone','like','%'.$keyword.'%')->paginate(7);
+        return view('employees.list', compact('employees','keyword'));
     }
 }

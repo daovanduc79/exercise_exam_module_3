@@ -11,8 +11,8 @@
                     <a href="{{route('employees.create')}}" class="btn btn-success">Thêm mới</a>
                 </div>
                 <div class="col-md-6">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
+                    <form class="form-inline my-2 my-lg-0" method="get" action="{{route('employees.search')}}">
+                        <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search" value="@if(isset($keyword)){{$keyword}}@endif" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>

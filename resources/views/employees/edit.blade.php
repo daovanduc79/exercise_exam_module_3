@@ -88,11 +88,11 @@
                 </div>
                 <div class="form-group">
                     <label>Address</label>
-                    <textarea name="address" rows="3" placeholder="{{$employee->address}}" class="form-control
+                    <textarea name="address" rows="3" class="form-control
                 @if($errors->first('address'))
                         is-invalid
                     @endif
-                        "></textarea>
+                        ">{{$employee->address}}</textarea>
                     @if($errors->first('address'))
                         <p class="text-danger">{{ $errors->first('address') }}</p>
                     @endif
