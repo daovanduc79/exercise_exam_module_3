@@ -26,7 +26,7 @@ class EmployeeRequest extends FormRequest
         return [
             'employee_group' => 'required',
             'name' => 'required',
-            'birthday' => 'required|date_format:Y-M-D|before:today',
+            'birthday' => 'required|date_format:Y-m-d|before:today',
             'sex' => 'required',
             'phone' => 'required|min:10|unique:employees',
             'cmnd' => 'required|min:12|unique:employees',

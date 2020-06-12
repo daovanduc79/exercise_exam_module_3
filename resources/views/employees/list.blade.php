@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+    <p style="color: green">{{session('success')}}</p>
     <div class="card">
         <div class="card-header">
             <h2>Danh sách nhân viên</h2>
@@ -25,8 +26,8 @@
                         <td>{{$employee->sex}}</td>
                         <td>{{$employee->phone}}</td>
                         <td>
-                            <a href="" class="btn btn-outline-warning">Sửa</a>
-                            <a href="" class="btn btn-outline-danger">Xóa</a>
+                            <a href="{{route('employees.edit', ['id'=>$employee->id])}}" class="btn btn-outline-warning">Sửa</a>
+                            <a href="{{route('employees.delete', ['id'=>$employee->id])}}" class="btn btn-outline-danger">Xóa</a>
                         </td>
                     </tr>
                 @endforeach
