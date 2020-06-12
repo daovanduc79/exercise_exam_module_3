@@ -19,8 +19,8 @@ class CreateEmployeesTable extends Migration
             $table->string('name');
             $table->date('birthday');
             $table->string('sex');
-            $table->integer('cmnd');
-            $table->integer('phone');
+            $table->string('cmnd');
+            $table->string('phone');
             $table->string('email');
             $table->string('address');
             $table->timestamps();
