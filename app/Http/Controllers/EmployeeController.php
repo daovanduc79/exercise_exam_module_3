@@ -44,9 +44,11 @@ class EmployeeController extends Controller
         return redirect()->route('employees.index');
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $employee = $this->employees->findOrFail($id);
 
+        return view('employees.edit', compact('employee'));
     }
 
     public function update()
@@ -54,9 +56,12 @@ class EmployeeController extends Controller
 
     }
 
-    public function delete()
+    public function delete($id)
     {
+        $employee = $this->employees->findOrFail($id);
+        $employee->delete();
 
+        return back();
     }
 
     public function search()
