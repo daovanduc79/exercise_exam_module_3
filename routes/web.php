@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('employees')->group(function () {
+    Route::get('/', 'EmployeeController@index')->name('employees.index');
+    Route::get('/create', 'EmployeeController@create')->name('employees.create');
+    Route::post('/create', 'EmployeeController@store')->name('employees.store');
+    Route::get('{id}/edit', 'EmployeeController@edit')->name('employees.edit');
+    Route::post('{id}/edit', 'EmployeeController@update')->name('employees.update');
+    Route::get('{id}/delete', 'EmployeeController@delete')->name('employees.delete');
+    Route::get('/search', 'EmployeeController@search')->name('employees.search');
+});
