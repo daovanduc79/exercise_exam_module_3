@@ -51,9 +51,23 @@ class EmployeeController extends Controller
         return view('employees.edit', compact('employee'));
     }
 
-    public function update()
+    public function update($id, EmployeeRequest $request)
     {
+        $employee = $this->employees->findOrFail($id);
+        $employee->employee_group = $request->employee_group;
+        $employee->name = $request->name;
+        $employee->birthday = $request->birthday;
+        $employee->sex = $request->sex;
+        $employee->phone = $request->phone;
+        $employee->cmnd = $request->cmnd;
+        $employee->email = $request->email;
+        $employee->address = $request->address;
+        $employee->save();
 
+        $message = 'câp nhật thành công!!!!';
+        session()->flash('success', $message);
+
+        return redirect()->route('employees.index');
     }
 
     public function delete($id)

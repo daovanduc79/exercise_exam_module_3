@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     <label>Số điện thoại</label>
-                    <input type="number" name="phone" value="{{ old('phone') }}" class="form-control
+                    <input type="text" name="phone" value="{{ old('phone') }}" class="form-control
                     @if($errors->first('phone'))
                         is-invalid
                     @endif
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                     <label>Số CMND</label>
-                    <input type="number" name="cmnd" value="{{ old('cmnd') }}" class="form-control
+                    <input type="text" name="cmnd" value="{{ old('cmnd') }}" class="form-control
                     @if($errors->first('cmnd'))
                         is-invalid
                     @endif

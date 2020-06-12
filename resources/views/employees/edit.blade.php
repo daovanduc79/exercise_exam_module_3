@@ -5,7 +5,7 @@
         <div class="col-md-8">
             <h3>Chỉnh sửa nhân viên {{$employee->name}}</h3>
             <hr>
-            <form method="post" action="{{route('employees.store')}}">
+            <form method="post" action="{{route('employees.update',['id'=>$employee->id])}}">
                 @csrf
                 <div class="form-group">
                     <label>Nhóm nhân viên</label>

@@ -6,6 +6,20 @@
             <h2>Danh sách nhân viên</h2>
         </div>
         <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="{{route('employees.create')}}" class="btn btn-success">Thêm mới</a>
+                </div>
+                <div class="col-md-6">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <hr>
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
